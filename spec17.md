@@ -1,9 +1,35 @@
-Front End Notes
+Spec17
 ---------------
 
-These are my notes about front end projects I have worked on.  
+These are my detailed notes about projects I am working on and/or have worked on.  
 
-# Introduction
+# React
+
+For the past six months I have been focused on React systems that use Reactabular Tables as their core front end modality.  Everything related to Table design and output has been my core focus.  For example I have been working on systems that have the concept of a shopping cart.  So the user is presented with a store like Amazon and they get to select products they want to purchase and "add to their cart".  Then they get to checkout.  There is the concept of an inventory system which manages which products the user is able to purchase as well as a system that keeps track of all of the receipts posted.  All of these systems can use HTML tables to model their datastructures that the end user sees.  These tabular  systems extend across to other projects.  Including buying and selling financial instruments.  You need to choose a stock to buy and then there is a system which shows the end user the transaction log of their purchases.  Again, a tabular system to display the data being used.
+
+The main reason for focusing on React now is because of Facebook's Relay.  For many years all of my development has been REST based.  But I am completely sold on Graphql and the power of having a defined query langage being used to get data on the backend.  Think SQL but instead of just relational databases you now have access to all sorts of backend systems that store data including blockchains, redis, Nosql, relational etc...
+
+I have been working with backend Graphql systems that use Graphql as their query language namely Dgraph and Github's new Graphql API.
+
+# Backend Systems
+
+Having worked with large system deployments mainly on AWS, I am fascinated by the infancy of our industry in the understanding of what it takes to build systems that are robust, secure, and fault tolerant.
+
+My career has been wide and varied but over the past couple of years I have been focusing on Golang programming in the area of products that uses the Raft algorithm as their underlying infrastructure for distributed computing and fault tolerance. Both Kubernetes and Consul use Raft to allow for individual node failures but still maintaining state of the cluster system.  Kubernetes underlying distributed storage system uses Etcd.
+
+Consensus in Etcd is based on a recent Stanford PhD thesis called Raft which enables replicated state machines to come to agreement on values you deem as important. Likewise, P2P systems in blockchain based systems use Proof of Stake like voting systems and also Proof of Work to agree on values that need to be persisted long term in both the Bitcoin and Ethereum blockchains.
+
+In the past, I worked on the Rkt spec which has integrations with Hashicorp's Nomad and Kubernetes.  I am also familiar in my past work with the internal workings of Docker via Systemd.
+
+Besides containerized systems, I have also been working in the blockchain space working with P2P systems like Ethereum and Bitcoin working on new ways to search, store and retrieve data structures embedded in blockchains most recently with a new system called Noms.
+
+In the Golang Bitcoin world my main focus for the past couple of years has been in decred and btcsuite and for the past year in the world of ethereum focusing on backend P2P system and on front end Solidity contracts and tools associated with compiling, deploying and debugging namely web3.js and Truffle.
+
+One of the very cool things about writing and debugging the Solidity contracts is that one can simulate the Ethereum client with Testrpc which gives one the ability to use the Web3 provider interface namely handleRequest to simulate all of the Web3 calls that need to be instantiated and simulated. Testrpc in concert with Truffle is an invaluable resource for quickly testing all of the code paths that need to be checked when prototyping new Ethereum contracts using Solidity.
+
+My interest in blockchains goes deeper as I am delving into newer blockchain like Merkle DAG systems such as Noms.  From an information storage and retrieval architecture one can think of Noms as a new style of database that tracks individual inserts / commits but enables one to have complete control over their local data similar to the way git works.  Tying back into Ethereum one can think of running your own Ethereum private network that gives you the ability to use the power of Etheruem but in your own company where accounting for things no matter what it may be is very important.  The currency aspect of Ethereum is at the top of the stack so there are many other types of applications that are relevant to blockchain type systems that lend themselves well to systems like Noms.
+
+# Front End Design History
 
 I started
 out designing front ends written in Java that ran both on the desktop and
@@ -39,7 +65,7 @@ is using
 [Vis.js](http://visjs.org/)
 to do all of their rendering of the nodes and edges of the data returned from the Graphql query.
 
-# Current Ideas
+# The Dgraph Project
 
 The front end project I am working on now, which is still in development has to do with saving off visualizations of subgraphs that are returned from a larger dgraph query.  Imagine a fairly large graph of data that gets returned when you query for one node and all of its children in a large dataset.  What you want to be able to do is save off sections of the graph for visualization and analysis reasons.  For now, the dgraph team only returns the whole graph, and then to visualize the subgraph you have to send in another query.  But I am working on the ability to click on one of the nodes in the subgraph and then just see that data and save it off as its own json datastructure.
 
