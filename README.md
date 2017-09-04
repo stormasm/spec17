@@ -19,9 +19,3 @@ git commit -m 'added first file in the new branch'
 
 
 git push origin new_branch_name.
-
-
-git - How to create a new empty branch for a new project - Stack ...
-
-
-https://stackoverflow.com/.../how-to-create-a-new-empty-branch-for-a-new-project
