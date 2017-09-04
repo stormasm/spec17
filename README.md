@@ -1,3 +1,8 @@
+
+* **[Read This First](https://github.com/stormasm/spec17/blob/master/my-notes.md)**
+
+* Here is the **[spec-md](https://github.com/leebyron/spec-md)** repository.
+
 Spec Markdown
 -------------
 
