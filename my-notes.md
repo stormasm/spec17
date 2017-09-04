@@ -9,14 +9,13 @@ Initially out of the box when you run
 npm install
 ```
 
-the original spec-md spec gets built...
-Then if you want to modify or change your frontend-notes simply run the command
+the original spec17.md gets built...
+Then if you want to modify or change your spec17.md simply run the command
 
 ```
-npm run go
+npm run start
 ```
 
-whose **go** tag is documented in package.json explaining exactly what it does.
+whose **start** tag is documented in package.json explaining exactly what it does.
 
-It overwrites the spec-md with your blog and then you can push the changes in
-the out directory into the branch gh-pages.
+Then you can push the changes in the out directory into the branch **gh-pages**.
