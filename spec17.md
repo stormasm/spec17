@@ -18,13 +18,17 @@ and
 
 ## Reactabular
 
-When my design requirements need React Tables I always turn to Reactabular as way ti display tabular data.  For example, recently I have been working on a system that has the concept of a shopping cart.  So the user is presented with a store like Amazon and they get to select products they want to purchase and "add to their cart".  Then they get to checkout.  There is also the concept of an inventory system which manages which products the user is able to purchase as well as a system that keeps track of all of the receipts posted.  All of these systems can use HTML tables to model their data structures that the end user sees.  These tabular systems extend across to other projects including buying and selling financial instruments.  You need to choose a stock to buy and this can easily be displayed using tables. Subsequently, there is a section which shows the end user the transaction log of their purchases.  Again, a tabular system to display the data is being used.
+When my design requirements need React Tables I always turn to
+[Reactabular](https://reactabular.js.org)
+as way to display tabular data.  For example, recently I have been working on a system that has the concept of a shopping cart.  So the user is presented with an Amazon like store front and they get to select products they want to purchase and "add to their cart".  Then they get to checkout.  There is also the concept of an inventory system which manages which products the user is able to purchase as well as a system that keeps track of all of the receipts posted.  All of these systems can use HTML tables to model their data structures that the end user sees.  These tabular systems extend across to other projects including buying and selling financial instruments.  You need to choose a stock to buy and this can easily be displayed using tables. Subsequently, there is a section which shows the end user the transaction log of their purchases.  Again, a tabular system to display the data is being used.
 
 ## Passport
 
 Most systems that I develop need the ability to authenticate a user so they can log in.  A simple abstraction called
 [Passport](http://passportjs.org/)
-enables one to simply and easily integrate login functionality into your Express app which I use for most of my systems.
+enables one to simply and easily integrate login functionality into your
+[Express](https://expressjs.com/)
+app which I use for most of my systems.
 
 # Backend Systems
 
@@ -40,18 +44,54 @@ use Raft to allow for individual node failures but still maintaining state of th
 Kubernetes underlying distributed storage system uses
 [Etcd](https://coreos.com/etcd/).
 
-[Consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)) 
-in Etcd is based on a recent Stanford PhD thesis called Raft which enables replicated state machines to come to agreement on values you deem as important. Likewise, P2P systems in blockchain based systems use Proof of Stake like voting systems and also Proof of Work to agree on values that need to be persisted long term in both the Bitcoin and Ethereum blockchains.
+[Consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)
+in Etcd is based on a recent Stanford PhD thesis called Raft which enables replicated state machines to come to agreement on values you deem as important. Likewise,
+[P2P](https://github.com/libp2p)
+systems in blockchain based systems use Proof of Stake like voting systems and also Proof of Work to agree on values that need to be persisted long term in both the Bitcoin and Ethereum blockchains.
 
-In the past, I worked on the Rkt spec which has integrations with Hashicorp's Nomad and Kubernetes.  I am also familiar in my past work with the internal workings of Docker via Systemd.
+In the past, I worked on the
+[Rkt spec](https://github.com/rkt/rkt)
+which has integrations with Hashicorp's Nomad and Kubernetes.  I am also familiar in my past work with the internal workings of Docker via
+[Systemd](https://github.com/systemd/systemd).
+
+# Blockchain Systems
 
 Besides containerized systems, I have also been working in the blockchain space working with P2P systems like Ethereum and Bitcoin working on new ways to search, store and retrieve data structures embedded in blockchains most recently with a new system called Noms.
 
-In the Golang Bitcoin world my main focus for the past couple of years has been in decred and btcsuite and for the past year in the world of ethereum focusing on backend P2P system and on front end Solidity contracts and tools associated with compiling, deploying and debugging namely web3.js and Truffle.
+In the Golang Bitcoin world my main focus was decred and btcsuite and more recently  in the world of ethereum focusing on backend P2P system and on front end Solidity contracts and tools associated with compiling, deploying and debugging namely web3.js and Truffle.
+
+## Ethereum
 
 One of the very cool things about writing and debugging the Solidity contracts is that one can simulate the Ethereum client with Testrpc which gives one the ability to use the Web3 provider interface namely handleRequest to simulate all of the Web3 calls that need to be instantiated and simulated. Testrpc in concert with Truffle is an invaluable resource for quickly testing all of the code paths that need to be checked when prototyping new Ethereum contracts using Solidity.
 
+## Noms
+
 My interest in blockchains goes deeper as I am delving into newer blockchain like Merkle DAG systems such as Noms.  From an information storage and retrieval architecture one can think of Noms as a new style of database that tracks individual inserts / commits but enables one to have complete control over their local data similar to the way git works.  Tying back into Ethereum one can think of running your own Ethereum private network that gives you the ability to use the power of Etheruem but in your own company where accounting for things no matter what it may be is very important.  The currency aspect of Ethereum is at the top of the stack so there are many other types of applications that are relevant to blockchain type systems that lend themselves well to systems like Noms.
+
+# Graphql
+
+For the past number of years I have been designing and building large scale API systems that use REST api endpoints.  Tools like Swagger are helpful for managing and automatically documenting the actual REST schemas that can then be generated for the different language implementations.
+
+Recently, Facebook introduced the concept of
+[Graphql](http://graphql.org/)
+which is now starting to gain some traction.  It "changes the game" so to speak in how we think about and build out APIs to back end services.  Now instead of designing many different endpoints for different types of data, we are able to incorporate our complete data model into one schema that we can then query against very similar to an SQL query.  We now have a defined Query Language that uses JSON requests to get at the data which is then returned in JSON as well.
+
+## The Dgraph Project
+
+One of the front end research projects I am working on now, which is still in development has to do with saving off visualizations of subgraphs that are returned from a larger dgraph query.  Imagine a fairly large graph of data that gets returned when you query for one node and all of its children in a large dataset.  What you want to be able to do is save off sections of the graph for visualization and analysis reasons.  For now, the dgraph team only returns the whole graph, and then to visualize the subgraph you have to send in another query.  But I am working on the ability to click on one of the nodes in the subgraph and then just see that data and save it off as its own Json data structure.
+
+
+# Machine Learning
+
+I am very familiar with the field of Machine Learning having done my graduate studies in Computer Science in the fields of Artificial Intelligence and Neural Networks.  Python is my language of choice when working on AI projects due to the fact that the core mathematical libraries namely
+[Numpy](http://www.numpy.org/)
+is written in Python.
+In the past I did a research project using
+[Tensorflow](https://www.tensorflow.org/)
+and
+[Gensim](https://github.com/RaRe-Technologies/gensim).
+Also, while working at Spinnakr we initiated a Machine Learning project
+for use in intelligent data analytics.  However, this project was never launched into production.
 
 # Front End Design History
 
@@ -89,11 +129,7 @@ is using
 [Vis.js](http://visjs.org/)
 to do all of their rendering of the nodes and edges of the data returned from the Graphql query.
 
-# The Dgraph Project
-
-The front end project I am working on now, which is still in development has to do with saving off visualizations of subgraphs that are returned from a larger dgraph query.  Imagine a fairly large graph of data that gets returned when you query for one node and all of its children in a large dataset.  What you want to be able to do is save off sections of the graph for visualization and analysis reasons.  For now, the dgraph team only returns the whole graph, and then to visualize the subgraph you have to send in another query.  But I am working on the ability to click on one of the nodes in the subgraph and then just see that data and save it off as its own json datastructure.
-
-# Angular
+## Angular
 
 I did some development work in
 [Angular.js](https://angular.io/)
@@ -104,21 +140,8 @@ Then two things happened to derail Angular from its rockstar status.
 1. Version 2 was written in Typescript
 2. React started to get traction
 
-At the time of this writing React has over 68,000 stars on Github and Angular has 56,000 stars.  Granted a new repo was created for Angular 2 and that repo has more than 24,000 stars.   
-
-# React
+## React
 
 When
 [React](https://facebook.github.io/react/)
 was originally released in 2013 I was spending most of my time developing backend API systems, and when I was doing front end development I was happily using Angular.  But in the past year, when a project came up to do work on the front end I decided to try out react.  I can't say that I am blown away by React, but I am happily using it and the ecosystem is clearly solid.  The thing I do like about React is the simplicity of it.  Because it only deals with the View part of the UI, there are clearly not as many moving parts as Angular.  The downside is that, the view code is embedded inside the Javascript's file **render** method, and that to me is not perfect.  But for now, I am happily developing using React, and coming back up to speed on all of the CSS that needs to be used to make the UI look correct.  But I will admit that I am **NOT** a fancy UI designer and the UIs I design are very simple.  So having an excellent designer on board for me to work with is clearly important for sophisticated web applications.
-
-
-# Graphql
-
-For the past number of years I have been designing and building large scale API systems that use REST api endpoints.  Tools like Swagger are helpful for managing and automatically documenting the actual REST schemas that can then be generated for the different language implementations.
-
-Recently, Facebook introduced the concept of
-[Graphql](http://graphql.org/)
-which is now starting to gain some traction.  It "changes the game" so to speak in how we think about and build out APIs to back end services.  Now instead of designing many different endpoints for different types of data, we are able to incorporate our complete data model into one schema that we can then query against very similar to an SQL query.  We now have a defined Query Language that uses JSON requests to get at the data which is then returned in JSON as well.
-
-# Relay
