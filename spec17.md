@@ -5,19 +5,43 @@ These are my detailed notes about projects I am working on and/or have worked on
 
 # React
 
-For the past six months I have been focused on React systems that use Reactabular Tables as their core front end modality.  Everything related to Table design and output has been my core focus.  For example I have been working on systems that have the concept of a shopping cart.  So the user is presented with a store like Amazon and they get to select products they want to purchase and "add to their cart".  Then they get to checkout.  There is the concept of an inventory system which manages which products the user is able to purchase as well as a system that keeps track of all of the receipts posted.  All of these systems can use HTML tables to model their datastructures that the end user sees.  These tabular  systems extend across to other projects.  Including buying and selling financial instruments.  You need to choose a stock to buy and then there is a system which shows the end user the transaction log of their purchases.  Again, a tabular system to display the data being used.
+The main reason for focusing on React now is because of
+[Facebook's Relay](https://facebook.github.io/relay/).  
+For many years all of my development has been REST based.  But I am completely sold on Graphql and the power of having a defined query langage being used to get data on the backend.  Think SQL but instead of just relational databases you now have access to all sorts of backend systems that store data including blockchains, redis, Nosql, relational etc...
 
-The main reason for focusing on React now is because of Facebook's Relay.  For many years all of my development has been REST based.  But I am completely sold on Graphql and the power of having a defined query langage being used to get data on the backend.  Think SQL but instead of just relational databases you now have access to all sorts of backend systems that store data including blockchains, redis, Nosql, relational etc...
+I have been working with backend
+[Graphql systems](http://graphql.org/)
+that use Graphql as their query language namely
+[Dgraph](https://dgraph.io/)
+and
+[Github's new Graphql API](https://developer.github.com/v4/).
 
-I have been working with backend Graphql systems that use Graphql as their query language namely Dgraph and Github's new Graphql API.
+## Reactabular
+
+When my design requirements need React Tables I always turn to Reactabular as way ti display tabular data.  For example, recently I have been working on a system that has the concept of a shopping cart.  So the user is presented with a store like Amazon and they get to select products they want to purchase and "add to their cart".  Then they get to checkout.  There is also the concept of an inventory system which manages which products the user is able to purchase as well as a system that keeps track of all of the receipts posted.  All of these systems can use HTML tables to model their data structures that the end user sees.  These tabular systems extend across to other projects including buying and selling financial instruments.  You need to choose a stock to buy and this can easily be displayed using tables. Subsequently, there is a section which shows the end user the transaction log of their purchases.  Again, a tabular system to display the data is being used.
+
+## Passport
+
+Most systems that I develop need the ability to authenticate a user so they can log in.  A simple abstraction called
+[Passport](http://passportjs.org/)
+enables one to simply and easily integrate login functionality into your Express app which I use for most of my systems.
 
 # Backend Systems
 
 Having worked with large system deployments mainly on AWS, I am fascinated by the infancy of our industry in the understanding of what it takes to build systems that are robust, secure, and fault tolerant.
 
-My career has been wide and varied but over the past couple of years I have been focusing on Golang programming in the area of products that uses the Raft algorithm as their underlying infrastructure for distributed computing and fault tolerance. Both Kubernetes and Consul use Raft to allow for individual node failures but still maintaining state of the cluster system.  Kubernetes underlying distributed storage system uses Etcd.
+My career has been wide and varied but over the past couple of years I have been focusing on Golang programming in the area of products that uses the
+[Raft algorithm](https://raft.github.io/)
+as their underlying infrastructure for distributed computing and fault tolerance. Both
+[Kubernetes](https://kubernetes.io/)
+and
+[Consul](https://www.consul.io/)
+use Raft to allow for individual node failures but still maintaining state of the cluster system.  
+Kubernetes underlying distributed storage system uses
+[Etcd](https://coreos.com/etcd/).
 
-Consensus in Etcd is based on a recent Stanford PhD thesis called Raft which enables replicated state machines to come to agreement on values you deem as important. Likewise, P2P systems in blockchain based systems use Proof of Stake like voting systems and also Proof of Work to agree on values that need to be persisted long term in both the Bitcoin and Ethereum blockchains.
+[Consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)) 
+in Etcd is based on a recent Stanford PhD thesis called Raft which enables replicated state machines to come to agreement on values you deem as important. Likewise, P2P systems in blockchain based systems use Proof of Stake like voting systems and also Proof of Work to agree on values that need to be persisted long term in both the Bitcoin and Ethereum blockchains.
 
 In the past, I worked on the Rkt spec which has integrations with Hashicorp's Nomad and Kubernetes.  I am also familiar in my past work with the internal workings of Docker via Systemd.
 
